@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="jumbotron">
+
+    <div class="row text-center">
+      <h3>Tweet Spread A Smile</h3>
+      <br />
+      <%= label_tag 'Message' %>
+      <%= text_area_tag 'message', nil, class: 'form-control', id: 'tweet-message' %>
+
+      <br />
+
+      <%= button_tag 'Tweet', class: 'btn btn-primary width100', id: 'tweet-submit' %>
+    </div>
+
+    <%= form_tag pages_connect_twitter_path, id: 'path_form' do %>
+      <%= hidden_field_tag 'path', nil, id: 'file_path' %>
+      <%= submit_tag 'save', class: 'collapse', id: 'submit_path' %>
+    <% end %>
+
+  </div>
+</div>
