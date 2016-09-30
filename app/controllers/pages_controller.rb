@@ -3,13 +3,17 @@ include Magick
 
 class PagesController < ApplicationController
 
+  # Home page
   def home
   end
 
+  # The text is written to the image
   def tweet
     img = ImageList.new("#{Rails.root}/public/base_img.jpg")
     txt = Draw.new
     c = 0
+
+    # 50 characters in one row
     (params[:message].length/50 + 1).times do |i|
       img.annotate(txt, 0, 0, 0, 1000 - c, params[:message][(0 + 50 * i)..50*(i+1)]) {
         txt.gravity = Magick::SouthGravity
@@ -21,6 +25,7 @@ class PagesController < ApplicationController
       }
     end
 
+    # Giving file name and writing to file
     img.format = 'jpeg'
     fname = SecureRandom.hex(20)
     path = "#{Rails.root}/public/#{fname}.jpg"
@@ -28,10 +33,12 @@ class PagesController < ApplicationController
     render json: { status: 200, path: path }
   end
 
+  # Omniauth to twitter with path of file passed along
   def connect_twitter
     redirect_to "/auth/twitter?path=#{params['path']}"
   end
 
+  # Return from omniauth along with path of file
   def return_twitter
     token = request.env['omniauth.auth'].credentials['token']
     secret = request.env['omniauth.auth'].credentials['secret']
@@ -41,8 +48,12 @@ class PagesController < ApplicationController
       config.access_token        = token
       config.access_token_secret = secret
     end
+
+    # Posting to twitter
     client.update_with_media('', File.new(params[:path]))
     flash[:success] = 'Tweet successful'
+
+    # Deleting file
     File.delete(params['path']) if File.exist?(params['path'])
     redirect_to root_path
   end
