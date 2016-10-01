@@ -17,14 +17,7 @@
 @import "bootstrap-sprockets";
 @import 'bootstrap';
 
-.navbar {
-  border-radius: 0;
-}
-
-a {
-  cursor: pointer;
-}
-
-.width100 {
-  width: 100%;
+.turbolinks-progress-bar {
+  background: #cf0a2c  !important;
+  height: 4px !important;
 }

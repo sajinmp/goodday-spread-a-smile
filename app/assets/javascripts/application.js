@@ -15,3 +15,15 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+$(document).ready(function($) {
+
+  var $root = $('html, body');
+  $('.show-menu a').click(function() {
+    $root.animate({
+      scrollTop: $( $.attr(this, 'href') ).offset().top-150
+      }, 500);
+      return false;
+    });
+
+});

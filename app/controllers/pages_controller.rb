@@ -18,8 +18,8 @@ class PagesController < ApplicationController
       img.annotate(txt, 0, 0, 0, 1000 - c, params[:message][(0 + 50 * i)..50*(i+1)]) {
         txt.gravity = Magick::SouthGravity
         txt.pointsize = 50
-        txt.stroke = '#000000'
-        txt.fill = '#ffffff'
+        txt.stroke = '#b66934'
+        txt.fill = '#b66934'
         txt.font_weight = Magick::BoldWeight
         c += 100
       }
