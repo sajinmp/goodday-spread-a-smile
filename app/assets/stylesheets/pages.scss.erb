@@ -9,20 +9,21 @@ $brown: #b66934;
 // General
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800';
 
+//@font-face {
+// font-family: 'chalkboard';
+// src: url('cb/chalkboard.eot');
+// src: url('cb/chalkboard.eot#iefix') format('eot'),
+//      url('cb/chalkboard.woff') format('woff'),
+//      url('cb/chalkboard.ttf') format('truetype');
+//}
+
 @font-face {
  font-family: 'chalkboard';
- src: url('cb/chalkboard.eot');
- src: url('cb/chalkboard.eot#iefix') format('eot'),
-      url('cb/chalkboard.woff') format('woff'),
-      url('cb/chalkboard.ttf') format('truetype');
+ src: url('<%= asset_path("cb/chalkboard.eot") %>');
+ src: url('<%= asset_path("cb/chalkboard.eot") + "?#iefix" %>') format('eot'),
+      url('<%= asset_path("cb/chalkboard.woff") %>') format('woff'),
+      url('<%= asset_path("cb/chalkboard.ttf") %>') format('truetype');
 }
-// @font-face {
-//  font-family: 'chalkboard';
-//  src: url('<%= asset_path("assets/fonts/cb/chalkboard.eot") %>');
-//  src: url('<%= asset_path("assets/fonts/cb/chalkboard.eot") + "?#iefix" %>') format('eot'),
-//       url('<%= asset_path("assets/fonts/cb/chalkboard.woff") %>') format('woff'),
-//       url('<%= asset_path("assets/fonts/cb/chalkboard.ttf") %>') format('truetype');
-// }
 // font-family: 'chalkboard' !important;
 
 body {
