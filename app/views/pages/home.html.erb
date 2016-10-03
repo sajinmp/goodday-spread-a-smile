@@ -1,6 +1,13 @@
 
 <div class="section1" id="section1">
   <div class="container">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6">
+        <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>"><%= value %></div>
+        <% end %>
+      </div><!--col-md-* end-->
+    </div><!--row end-->
     <div class="text-center">
       <%= image_tag("goodday.png", alt: 'biscuit', class: "biscuit-img img-responsive") %>
       <br>

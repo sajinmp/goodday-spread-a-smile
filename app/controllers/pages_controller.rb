@@ -15,15 +15,24 @@ class PagesController < ApplicationController
 
     # 50 characters in one row
     (params[:message].length/50 + 1).times do |i|
-      img.annotate(txt, 0, 0, 0, 1000 - c, params[:message][(0 + 50 * i)..50*(i+1)]) {
+      img.annotate(txt, 0, 0, 0, 400 - c, params[:message][(0 + 50 * i)..50*(i+1)]) {
         txt.gravity = Magick::SouthGravity
-        txt.pointsize = 50
+        txt.pointsize = 20
         txt.stroke = '#b66934'
         txt.fill = '#b66934'
-        txt.font_weight = Magick::BoldWeight
-        c += 100
+        # txt.font_weight = Magick::BoldWeight
+        c += 50
       }
     end
+
+    img.annotate(txt, 0, 0, 0, 400 - c, '#SmileMoreForAGoodDay') {
+      txt.gravity = Magick::SouthGravity
+      txt.pointsize = 20
+      txt.stroke = '#b66934'
+      txt.fill = '#b66934'
+      # txt.font_weight = Magick::BoldWeight
+      c += 50
+    }
 
     # Giving file name and writing to file
     img.format = 'jpeg'
@@ -50,11 +59,11 @@ class PagesController < ApplicationController
     end
 
     # Posting to twitter
-    client.update_with_media('', File.new(params[:path]))
-    flash[:success] = 'Tweet successful'
+    client.update_with_media('#SmileMoreForAGoodDay', File.new(params[:path]))
+    flash[:success] = 'Tweet Successful!! #SmileMoreForAGoodDay'
 
     # Deleting file
-    File.delete(params['path']) if File.exist?(params['path'])
+    # File.delete(params['path']) if File.exist?(params['path'])
     redirect_to root_path
   end
 
