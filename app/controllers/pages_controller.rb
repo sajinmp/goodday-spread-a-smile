@@ -63,7 +63,7 @@ class PagesController < ApplicationController
     flash[:success] = 'Tweet Successful!! #SmileMoreForAGoodDay'
 
     # Deleting file
-    # File.delete(params['path']) if File.exist?(params['path'])
+    File.delete(params['path']) if File.exist?(params['path'])
     redirect_to root_path
   end
 
