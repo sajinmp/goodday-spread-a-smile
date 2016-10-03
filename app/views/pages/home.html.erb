@@ -211,13 +211,13 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-offset-3 col-sm-6 text-center">
-        <div class="chalkboard hd2">Share A Smile</div>
+        <div class="chalkboard hd2 error-tw">Share A Smile</div>
         <div class="sec2-txt">Tweet a message and share a smile</div>
         <br><br>
         <div class="tweet-bar">
           <label class="control-label sr-only" for="inputGroupSuccess4">Input group with success</label>
           <div class="input-group">
-            <input type="text" class="form-control tweet-bar-txt" placeholder="Tweet #SmileMoreForAGoodDay with your tweet" id="tweet-message">
+            <input type="text" class="form-control tweet-bar-txt" placeholder="Tweet your Heart Out !" id="tweet-message">
             <span class="input-group-addon">
               <button class="tweet-btn" id="tweet-submit">
                 <%= image_tag("tw.png", alt: 'tweet', class: "tweet") %>
@@ -231,31 +231,12 @@
         <% end %>
       </div><!--col-sm-* end-->
     </div><!--row end-->
+    <br>
+    <div class="load_div hide">
+      <div id="loader"></div>
+    </div>
+    <br>
   </div><!--container end-->
 </div><!--section1 end-->
 
-
-
-<!-- <br><br>
-<div class="container">
-  <div class="jumbotron">
-
-    <div class="row text-center">
-      <h3>Tweet Spread A Smile</h3>
-      <br />
-      <%= label_tag 'Message' %>
-      <%= text_area_tag 'message', nil, class: 'form-control', id: 'tweet-message' %>
-
-      <br />
-
-      <%= button_tag 'Tweet', class: 'btn btn-primary width100', id: 'tweet-submit' %>
-    </div>
-
-    <%= form_tag pages_connect_twitter_path, id: 'path_form' do %>
-      <%= hidden_field_tag 'path', nil, id: 'file_path' %>
-      <%= submit_tag 'save', class: 'collapse', id: 'submit_path' %>
-    <% end %>
-
-  </div>
-</div> -->
 

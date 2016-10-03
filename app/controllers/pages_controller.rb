@@ -18,8 +18,8 @@ class PagesController < ApplicationController
       img.annotate(txt, 0, 0, 0, 400 - c, params[:message][(0 + 50 * i)..50*(i+1)]) {
         txt.gravity = Magick::SouthGravity
         txt.pointsize = 20
-        txt.stroke = '#b66934'
-        txt.fill = '#b66934'
+        txt.stroke = '#de9007'
+        txt.fill = '#de9007'
         # txt.font_weight = Magick::BoldWeight
         c += 50
       }
@@ -28,8 +28,8 @@ class PagesController < ApplicationController
     img.annotate(txt, 0, 0, 0, 400 - c, '#SmileMoreForAGoodDay') {
       txt.gravity = Magick::SouthGravity
       txt.pointsize = 20
-      txt.stroke = '#b66934'
-      txt.fill = '#b66934'
+      txt.stroke = '#cf0a2c'
+      txt.fill = '#cf0a2c'
       # txt.font_weight = Magick::BoldWeight
       c += 50
     }
