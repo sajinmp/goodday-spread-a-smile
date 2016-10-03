@@ -39,3 +39,7 @@ gem 'twitter'
 gem 'figaro'
 
 gem 'nokogiri', '1.6.8'
+
+group :production do
+  gem 'rails_12factor'
+end
