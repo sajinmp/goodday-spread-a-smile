@@ -37,3 +37,5 @@ gem 'omniauth-twitter'
 gem 'twitter'
 
 gem 'figaro'
+
+gem 'nokogiri', '1.6.8'
