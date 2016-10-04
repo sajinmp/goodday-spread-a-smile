@@ -9,14 +9,6 @@ $brown: #b66934;
 // General
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800';
 
-//@font-face {
-// font-family: 'chalkboard';
-// src: url('cb/chalkboard.eot');
-// src: url('cb/chalkboard.eot#iefix') format('eot'),
-//      url('cb/chalkboard.woff') format('woff'),
-//      url('cb/chalkboard.ttf') format('truetype');
-//}
-
 @font-face {
  font-family: 'chalkboard';
  src: url('<%= asset_path("cb/chalkboard.eot") %>');
@@ -24,7 +16,6 @@ $brown: #b66934;
       url('<%= asset_path("cb/chalkboard.woff") %>') format('woff'),
       url('<%= asset_path("cb/chalkboard.ttf") %>') format('truetype');
 }
-// font-family: 'chalkboard' !important;
 
 body {
   font-family: 'Open Sans', sans-serif !important;
@@ -34,6 +25,12 @@ body {
   background-attachment: fixed;
 }
 
+img {
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -khtml-user-drag: none;
+}
+
 .img-responsive {
   margin: 0 auto;
 }
@@ -41,7 +38,6 @@ body {
 .debug_dump {
   display: none;
 }
-
 
 // General End
 
